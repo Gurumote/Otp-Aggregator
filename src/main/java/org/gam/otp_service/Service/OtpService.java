@@ -31,6 +31,7 @@ public class OtpService {
                 .expiresAt(LocalDateTime.now().plusMinutes(10))
                 .verifiedAt(null)
                 .build();
+        otpRepo.save(otp1);
         boolean resp=otpDispatchService.sendService(otp1);
         OtpResponse otpResponse = null;
         if(resp){
